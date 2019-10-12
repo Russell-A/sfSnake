@@ -20,6 +20,8 @@ private:
 	sf::Font font_;
 	sf::Text text_;
 
+	sf::RectangleShape sp;
+	sf::Texture texture;
 	unsigned score_;
 };
 }

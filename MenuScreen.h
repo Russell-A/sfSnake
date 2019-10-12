@@ -20,6 +20,8 @@ private:
 	sf::Font font_;
 	sf::Text snakeText_;
 	sf::Text text_;
+	sf::RectangleShape rect;
+	sf::Texture texture;
 };
 }
 

@@ -10,15 +10,18 @@ using namespace sfSnake;
 
 MenuScreen::MenuScreen()
 {
-	font_.loadFromFile("Fonts/game_over.ttf");
+	font_.loadFromFile("Fonts/Futura-Heavy-4.ttf");
 	text_.setFont(font_);
 	text_.setString(
 		"\n\n\n\n\n\n\n\n\nPress [SPACE] to play"
-		"\n\nPress [ESC] to quit");
+		"\n\nPress [ESC] to quit"
+		"\n\nDuring game, "
+		"\n\npress TAB to change BG picture"
+		"\n\npress SPACE to shift gridding");
 
 	snakeText_.setFont(font_);
 	snakeText_.setString("Snake!");
-	snakeText_.setColor(sf::Color::Green);
+	snakeText_.setFillColor(sf::Color::Red);
 	snakeText_.setCharacterSize(64);
 	snakeText_.setStyle(sf::Text::Bold);
 
@@ -26,6 +29,8 @@ MenuScreen::MenuScreen()
 	text_.setOrigin(textBounds.left + textBounds.width / 2,
 		textBounds.top + textBounds.height / 2);
 	text_.setPosition(Game::Width / 2, Game::Height / 2);
+	text_.setOutlineColor(sf::Color::Black);
+	text_.setOutlineThickness(1.f);
 
 	sf::FloatRect snakeTextBounds = snakeText_.getLocalBounds();
 	snakeText_.setOrigin(snakeTextBounds.left + snakeTextBounds.width / 2,
@@ -71,6 +76,12 @@ void MenuScreen::update(sf::Time delta)
 
 void MenuScreen::render(sf::RenderWindow& window)
 {
+	texture.loadFromFile("menu.jpg");
+	rect = sf::RectangleShape(sf::Vector2f(Game::Width,Game::Height));
+	rect.setTexture(&texture);
+	window.draw(rect);
+
 	window.draw(text_);
 	window.draw(snakeText_);
+	
 }
