@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 编译命令： g++ -Ic:/SFML/include *.cpp -Lc:/SFML/lib -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
-主程序： a.exe
+需要sfml资源库
 
 说明文档：在已有贪食蛇游戏的基础上，增加如下功能：
 1) 贪食蛇的控制
